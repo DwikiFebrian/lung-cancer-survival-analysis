@@ -1,0 +1,37 @@
+coxph(formula = surv_obj ~ age_cat_Old + age_cat_Young + sex_2 + 
+    ph.karno_cat_Low + ph.karno_cat_Medium + pat.karno_cat_Low + 
+    pat.karno_cat_Medium + meal.cal_cat_Medium + wt.loss_cat_MildLoss + 
+    wt.loss_cat_SevereLoss, data = data_encoded)
+
+  n= 208, number of events= 152 
+
+                            coef exp(coef)  se(coef)      z Pr(>|z|)   
+age_cat_Old             0.363656  1.438579  0.220335  1.650  0.09885 . 
+age_cat_Young          -0.026258  0.974084  0.191690 -0.137  0.89104   
+sex_2                  -0.483850  0.616406  0.181053 -2.672  0.00753 **
+ph.karno_cat_Low        0.139801  1.150045  0.318541  0.439  0.66075   
+ph.karno_cat_Medium     0.313286  1.367912  0.200335  1.564  0.11786   
+pat.karno_cat_Low       0.711860  2.037779  0.260437  2.733  0.00627 **
+pat.karno_cat_Medium    0.223964  1.251026  0.208696  1.073  0.28320   
+meal.cal_cat_Medium    -0.003366  0.996639  0.177396 -0.019  0.98486   
+wt.loss_cat_MildLoss   -0.008173  0.991861  0.213020 -0.038  0.96940   
+wt.loss_cat_SevereLoss -0.053066  0.948318  0.221827 -0.239  0.81093   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                       exp(coef) exp(-coef) lower .95 upper .95
+age_cat_Old               1.4386     0.6951    0.9341     2.216
+age_cat_Young             0.9741     1.0266    0.6690     1.418
+sex_2                     0.6164     1.6223    0.4323     0.879
+ph.karno_cat_Low          1.1500     0.8695    0.6160     2.147
+ph.karno_cat_Medium       1.3679     0.7310    0.9237     2.026
+pat.karno_cat_Low         2.0378     0.4907    1.2231     3.395
+pat.karno_cat_Medium      1.2510     0.7993    0.8310     1.883
+meal.cal_cat_Medium       0.9966     1.0034    0.7039     1.411
+wt.loss_cat_MildLoss      0.9919     1.0082    0.6533     1.506
+wt.loss_cat_SevereLoss    0.9483     1.0545    0.6140     1.465
+
+Concordance= 0.648  (se = 0.025 )
+Likelihood ratio test= 28.34  on 10 df,   p=0.002
+Wald test            = 29.24  on 10 df,   p=0.001
+Score (logrank) test = 30.5  on 10 df,   p=7e-04
